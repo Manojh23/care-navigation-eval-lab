@@ -1,0 +1,104 @@
+{
+  "seed": 23,
+  "quick": false,
+  "fixture_sha256": "bd184840941cec58868b50d55d96ab87855054024a4b44f66bbbcb49456575d8",
+  "split_sizes": {
+    "train": 216,
+    "validation": 18,
+    "test": 48
+  },
+  "parameters": 21990,
+  "lora_parameters": 184,
+  "stages": {
+    "base": {
+      "validation": {
+        "cases": 18,
+        "families": 6,
+        "raw_accuracy": 0.1667,
+        "guarded_accuracy": 0.6667,
+        "raw_safety_routing": 0.0,
+        "guarded_safety_routing": 1.0,
+        "raw_navigation_accuracy": 0.3333,
+        "guarded_navigation_accuracy": 0.3333,
+        "failure_count": 15
+      },
+      "test": {
+        "cases": 48,
+        "families": 12,
+        "raw_accuracy": 0.1667,
+        "guarded_accuracy": 0.6667,
+        "raw_safety_routing": 0.0,
+        "guarded_safety_routing": 1.0,
+        "raw_navigation_accuracy": 0.3333,
+        "guarded_navigation_accuracy": 0.3333,
+        "failure_count": 40
+      }
+    },
+    "sft": {
+      "validation": {
+        "cases": 18,
+        "families": 6,
+        "raw_accuracy": 0.1111,
+        "guarded_accuracy": 0.6111,
+        "raw_safety_routing": 0.0,
+        "guarded_safety_routing": 1.0,
+        "raw_navigation_accuracy": 0.2222,
+        "guarded_navigation_accuracy": 0.2222,
+        "failure_count": 16
+      },
+      "test": {
+        "cases": 48,
+        "families": 12,
+        "raw_accuracy": 0.2292,
+        "guarded_accuracy": 0.6667,
+        "raw_safety_routing": 0.125,
+        "guarded_safety_routing": 1.0,
+        "raw_navigation_accuracy": 0.3333,
+        "guarded_navigation_accuracy": 0.3333,
+        "failure_count": 37
+      }
+    },
+    "dpo": {
+      "validation": {
+        "cases": 18,
+        "families": 6,
+        "raw_accuracy": 0.1667,
+        "guarded_accuracy": 0.5,
+        "raw_safety_routing": 0.3333,
+        "guarded_safety_routing": 1.0,
+        "raw_navigation_accuracy": 0.0,
+        "guarded_navigation_accuracy": 0.0,
+        "failure_count": 15
+      },
+      "test": {
+        "cases": 48,
+        "families": 12,
+        "raw_accuracy": 0.1458,
+        "guarded_accuracy": 0.5,
+        "raw_safety_routing": 0.2917,
+        "guarded_safety_routing": 1.0,
+        "raw_navigation_accuracy": 0.0,
+        "guarded_navigation_accuracy": 0.0,
+        "failure_count": 41
+      }
+    }
+  },
+  "validation_gate": {
+    "passed": false,
+    "checks": {
+      "guarded_safety_floor": true,
+      "raw_safety_no_regression": true,
+      "guarded_navigation_no_large_regression": false
+    }
+  },
+  "validation_candidate": "sft",
+  "test_regression_audit": {
+    "passed": false,
+    "checks": {
+      "guarded_safety_floor": true,
+      "raw_safety_no_regression": true,
+      "guarded_navigation_no_large_regression": false
+    }
+  },
+  "selected_stage": "sft"
+}
